@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "disply letras moviles", "disply letras moviles\disply letras moviles.cproj", "{9A953C01-AB07-44E8-AE2E-09DD27EBB1FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A953C01-AB07-44E8-AE2E-09DD27EBB1FA}.Debug|AVR.ActiveCfg = Debug|AVR
+		{9A953C01-AB07-44E8-AE2E-09DD27EBB1FA}.Debug|AVR.Build.0 = Debug|AVR
+		{9A953C01-AB07-44E8-AE2E-09DD27EBB1FA}.Release|AVR.ActiveCfg = Release|AVR
+		{9A953C01-AB07-44E8-AE2E-09DD27EBB1FA}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

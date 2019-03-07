@@ -1,0 +1,1697 @@
+
+illucia2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000026  00800100  000008b2  00000946  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000008b2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000118  00800126  00800126  0000096c  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000096c  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000099c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000090  00000000  00000000  000009dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000ffa  00000000  00000000  00000a6c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000982  00000000  00000000  00001a66  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000857  00000000  00000000  000023e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000002cc  00000000  00000000  00002c40  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000679  00000000  00000000  00002f0c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000994  00000000  00000000  00003585  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000170  00000000  00000000  00003f19  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   8:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  10:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  14:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  18:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  1c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  20:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  24:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  28:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  2c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  30:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  34:	0c 94 7a 00 	jmp	0xf4	; 0xf4 <__vector_13>
+  38:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  3c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  40:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  44:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  48:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  4c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  50:	0c 94 e0 00 	jmp	0x1c0	; 0x1c0 <__vector_20>
+  54:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  58:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  5c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  60:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  64:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  68:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  6c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  70:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  74:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  78:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d4 e0       	ldi	r29, 0x04	; 4
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_copy_data>:
+  88:	11 e0       	ldi	r17, 0x01	; 1
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	e2 eb       	ldi	r30, 0xB2	; 178
+  90:	f8 e0       	ldi	r31, 0x08	; 8
+  92:	02 c0       	rjmp	.+4      	; 0x98 <__do_copy_data+0x10>
+  94:	05 90       	lpm	r0, Z+
+  96:	0d 92       	st	X+, r0
+  98:	a6 32       	cpi	r26, 0x26	; 38
+  9a:	b1 07       	cpc	r27, r17
+  9c:	d9 f7       	brne	.-10     	; 0x94 <__do_copy_data+0xc>
+
+0000009e <__do_clear_bss>:
+  9e:	22 e0       	ldi	r18, 0x02	; 2
+  a0:	a6 e2       	ldi	r26, 0x26	; 38
+  a2:	b1 e0       	ldi	r27, 0x01	; 1
+  a4:	01 c0       	rjmp	.+2      	; 0xa8 <.do_clear_bss_start>
+
+000000a6 <.do_clear_bss_loop>:
+  a6:	1d 92       	st	X+, r1
+
+000000a8 <.do_clear_bss_start>:
+  a8:	ae 33       	cpi	r26, 0x3E	; 62
+  aa:	b2 07       	cpc	r27, r18
+  ac:	e1 f7       	brne	.-8      	; 0xa6 <.do_clear_bss_loop>
+  ae:	0e 94 d9 03 	call	0x7b2	; 0x7b2 <main>
+  b2:	0c 94 57 04 	jmp	0x8ae	; 0x8ae <_exit>
+
+000000b6 <__bad_interrupt>:
+  b6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ba <analogWrite>:
+void timer1(void)
+{
+	TCCR1A=0B00000000;  //modo ctc
+	TCCR1B=0B00001001; //prescalador 1 
+	OCR1A=7;  //a f de 500khz cada 2us
+	TIMSK1=0B00000010;
+  ba:	41 11       	cpse	r20, r1
+  bc:	0b c0       	rjmp	.+22     	; 0xd4 <analogWrite+0x1a>
+  be:	9b b1       	in	r25, 0x0b	; 11
+  c0:	21 e0       	ldi	r18, 0x01	; 1
+  c2:	30 e0       	ldi	r19, 0x00	; 0
+  c4:	08 2e       	mov	r0, r24
+  c6:	02 c0       	rjmp	.+4      	; 0xcc <analogWrite+0x12>
+  c8:	22 0f       	add	r18, r18
+  ca:	33 1f       	adc	r19, r19
+  cc:	0a 94       	dec	r0
+  ce:	e2 f7       	brpl	.-8      	; 0xc8 <analogWrite+0xe>
+  d0:	29 2b       	or	r18, r25
+  d2:	2b b9       	out	0x0b, r18	; 11
+  d4:	46 13       	cpse	r20, r22
+  d6:	0d c0       	rjmp	.+26     	; 0xf2 <analogWrite+0x38>
+  d8:	4b b1       	in	r20, 0x0b	; 11
+  da:	21 e0       	ldi	r18, 0x01	; 1
+  dc:	30 e0       	ldi	r19, 0x00	; 0
+  de:	b9 01       	movw	r22, r18
+  e0:	02 c0       	rjmp	.+4      	; 0xe6 <analogWrite+0x2c>
+  e2:	66 0f       	add	r22, r22
+  e4:	77 1f       	adc	r23, r23
+  e6:	8a 95       	dec	r24
+  e8:	e2 f7       	brpl	.-8      	; 0xe2 <analogWrite+0x28>
+  ea:	cb 01       	movw	r24, r22
+  ec:	80 95       	com	r24
+  ee:	84 23       	and	r24, r20
+  f0:	8b b9       	out	0x0b, r24	; 11
+  f2:	08 95       	ret
+
+000000f4 <__vector_13>:
+}
+
+ISR (TIMER1_COMPA_vect) //cada 2us
+{
+  f4:	1f 92       	push	r1
+  f6:	0f 92       	push	r0
+  f8:	0f b6       	in	r0, 0x3f	; 63
+  fa:	0f 92       	push	r0
+  fc:	11 24       	eor	r1, r1
+  fe:	0f 93       	push	r16
+ 100:	1f 93       	push	r17
+ 102:	2f 93       	push	r18
+ 104:	3f 93       	push	r19
+ 106:	4f 93       	push	r20
+ 108:	5f 93       	push	r21
+ 10a:	6f 93       	push	r22
+ 10c:	7f 93       	push	r23
+ 10e:	8f 93       	push	r24
+ 110:	9f 93       	push	r25
+ 112:	af 93       	push	r26
+ 114:	bf 93       	push	r27
+ 116:	cf 93       	push	r28
+ 118:	df 93       	push	r29
+ 11a:	ef 93       	push	r30
+ 11c:	ff 93       	push	r31
+	contador++;
+ 11e:	80 91 26 01 	lds	r24, 0x0126	; 0x800126 <__data_end>
+ 122:	8f 5f       	subi	r24, 0xFF	; 255
+ 124:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <__data_end>
+ 128:	cb e1       	ldi	r28, 0x1B	; 27
+ 12a:	d1 e0       	ldi	r29, 0x01	; 1
+ 12c:	03 e2       	ldi	r16, 0x23	; 35
+ 12e:	11 e0       	ldi	r17, 0x01	; 1
+ 130:	fe 01       	movw	r30, r28
+ 132:	31 97       	sbiw	r30, 0x01	; 1
+	for (int l=0; l<NUMBER_OF_LEDS_ELEMENTS; l++)
+	{
+		analogWrite(leds[l]._id,leds[l].value,contador);
+ 134:	80 81       	ld	r24, Z
+ 136:	40 91 26 01 	lds	r20, 0x0126	; 0x800126 <__data_end>
+ 13a:	68 81       	ld	r22, Y
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	0e 94 5d 00 	call	0xba	; 0xba <analogWrite>
+ 142:	22 96       	adiw	r28, 0x02	; 2
+}
+
+ISR (TIMER1_COMPA_vect) //cada 2us
+{
+	contador++;
+	for (int l=0; l<NUMBER_OF_LEDS_ELEMENTS; l++)
+ 144:	c0 17       	cp	r28, r16
+ 146:	d1 07       	cpc	r29, r17
+ 148:	99 f7       	brne	.-26     	; 0x130 <__vector_13+0x3c>
+	{
+		analogWrite(leds[l]._id,leds[l].value,contador);
+	}
+}
+ 14a:	ff 91       	pop	r31
+ 14c:	ef 91       	pop	r30
+ 14e:	df 91       	pop	r29
+ 150:	cf 91       	pop	r28
+ 152:	bf 91       	pop	r27
+ 154:	af 91       	pop	r26
+ 156:	9f 91       	pop	r25
+ 158:	8f 91       	pop	r24
+ 15a:	7f 91       	pop	r23
+ 15c:	6f 91       	pop	r22
+ 15e:	5f 91       	pop	r21
+ 160:	4f 91       	pop	r20
+ 162:	3f 91       	pop	r19
+ 164:	2f 91       	pop	r18
+ 166:	1f 91       	pop	r17
+ 168:	0f 91       	pop	r16
+ 16a:	0f 90       	pop	r0
+ 16c:	0f be       	out	0x3f, r0	; 63
+ 16e:	0f 90       	pop	r0
+ 170:	1f 90       	pop	r1
+ 172:	18 95       	reti
+
+00000174 <conf_serial_com>:
+
+
+//////////////////////////////////////////////////////////////
+void conf_serial_com(void)
+{
+	UCSR0A=0;
+ 174:	10 92 c0 00 	sts	0x00C0, r1	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7e00c0>
+	UCSR0B=0b10011000; // transmite y recibe activa uint de recibido
+ 178:	88 e9       	ldi	r24, 0x98	; 152
+ 17a:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7e00c1>
+	UCSR0C=0b00000110;
+ 17e:	86 e0       	ldi	r24, 0x06	; 6
+ 180:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7e00c2>
+	UBRR0=51;           //baud rate inicializado a 9600
+ 184:	83 e3       	ldi	r24, 0x33	; 51
+ 186:	90 e0       	ldi	r25, 0x00	; 0
+ 188:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7e00c5>
+ 18c:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7e00c4>
+ 190:	08 95       	ret
+
+00000192 <serial_transmit>:
+}
+void serial_transmit(unsigned char dato)
+{
+	while ((UCSR0A & 0b100000)==0);  //mientras bit UDRE tenga dato
+ 192:	e0 ec       	ldi	r30, 0xC0	; 192
+ 194:	f0 e0       	ldi	r31, 0x00	; 0
+ 196:	90 81       	ld	r25, Z
+ 198:	95 ff       	sbrs	r25, 5
+ 19a:	fd cf       	rjmp	.-6      	; 0x196 <serial_transmit+0x4>
+	UDR0=dato;    //SE ENVIA EL DATO
+ 19c:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7e00c6>
+ 1a0:	08 95       	ret
+
+000001a2 <envia_cadena>:
+}
+
+void envia_cadena(char* cadena)
+{	 //cadena de caracteres de tipo char
+ 1a2:	cf 93       	push	r28
+ 1a4:	df 93       	push	r29
+ 1a6:	ec 01       	movw	r28, r24
+	while(*cadena !=0x00){				//mientras el último valor de la cadena sea diferente
+ 1a8:	88 81       	ld	r24, Y
+ 1aa:	88 23       	and	r24, r24
+ 1ac:	31 f0       	breq	.+12     	; 0x1ba <envia_cadena+0x18>
+ 1ae:	21 96       	adiw	r28, 0x01	; 1
+		//a el caracter nulo
+		serial_transmit(*cadena);	//transmite los caracteres de cadena
+ 1b0:	0e 94 c9 00 	call	0x192	; 0x192 <serial_transmit>
+	UDR0=dato;    //SE ENVIA EL DATO
+}
+
+void envia_cadena(char* cadena)
+{	 //cadena de caracteres de tipo char
+	while(*cadena !=0x00){				//mientras el último valor de la cadena sea diferente
+ 1b4:	89 91       	ld	r24, Y+
+ 1b6:	81 11       	cpse	r24, r1
+ 1b8:	fb cf       	rjmp	.-10     	; 0x1b0 <envia_cadena+0xe>
+		//a el caracter nulo
+		serial_transmit(*cadena);	//transmite los caracteres de cadena
+		cadena++;						//incrementa la ubicación de los caracteres en cadena
+	}
+}
+ 1ba:	df 91       	pop	r29
+ 1bc:	cf 91       	pop	r28
+ 1be:	08 95       	ret
+
+000001c0 <__vector_20>:
+
+ISR (USART0_RX_vect)
+{
+ 1c0:	1f 92       	push	r1
+ 1c2:	0f 92       	push	r0
+ 1c4:	0f b6       	in	r0, 0x3f	; 63
+ 1c6:	0f 92       	push	r0
+ 1c8:	11 24       	eor	r1, r1
+ 1ca:	2f 93       	push	r18
+ 1cc:	3f 93       	push	r19
+ 1ce:	8f 93       	push	r24
+ 1d0:	9f 93       	push	r25
+ 1d2:	ef 93       	push	r30
+ 1d4:	ff 93       	push	r31
+	while ((UCSR0A & 0B10000000)==0)  ;//ESPERA A Q TERMINE DE RECIBIR
+ 1d6:	e0 ec       	ldi	r30, 0xC0	; 192
+ 1d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1da:	80 81       	ld	r24, Z
+ 1dc:	88 23       	and	r24, r24
+ 1de:	ec f7       	brge	.-6      	; 0x1da <__vector_20+0x1a>
+	dato_recibido=UDR0;
+ 1e0:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7e00c6>
+ 1e4:	80 93 27 01 	sts	0x0127, r24	; 0x800127 <dato_recibido>
+	
+	if ((dato_recibido=='l')&&(llegada>1))   //SI EL DATO DE ENTRADA ES ENTER
+ 1e8:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <dato_recibido>
+ 1ec:	8c 36       	cpi	r24, 0x6C	; 108
+ 1ee:	61 f4       	brne	.+24     	; 0x208 <__vector_20+0x48>
+ 1f0:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <llegada>
+ 1f4:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <llegada+0x1>
+ 1f8:	02 97       	sbiw	r24, 0x02	; 2
+ 1fa:	0c f4       	brge	.+2      	; 0x1fe <__vector_20+0x3e>
+ 1fc:	4b c0       	rjmp	.+150    	; 0x294 <__vector_20+0xd4>
+	{
+		llegada=0;
+ 1fe:	10 92 23 01 	sts	0x0123, r1	; 0x800123 <llegada+0x1>
+ 202:	10 92 22 01 	sts	0x0122, r1	; 0x800122 <llegada>
+ 206:	49 c0       	rjmp	.+146    	; 0x29a <__vector_20+0xda>
+	}
+	else if ((dato_recibido=='r')&&(llegada>1))
+ 208:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <dato_recibido>
+ 20c:	82 37       	cpi	r24, 0x72	; 114
+ 20e:	51 f4       	brne	.+20     	; 0x224 <__vector_20+0x64>
+ 210:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <llegada>
+ 214:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <llegada+0x1>
+ 218:	02 97       	sbiw	r24, 0x02	; 2
+ 21a:	24 f0       	brlt	.+8      	; 0x224 <__vector_20+0x64>
+	{
+		needsHandshake=1;
+ 21c:	81 e0       	ldi	r24, 0x01	; 1
+ 21e:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <needsHandshake>
+ 222:	11 c0       	rjmp	.+34     	; 0x246 <__vector_20+0x86>
+	}
+	else
+	{
+		cadena[llegada++]=dato_recibido;   //SE GUARDA EL DATO EN UNA POSICION DEL VECTOR
+ 224:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <llegada>
+ 228:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <llegada+0x1>
+ 22c:	9c 01       	movw	r18, r24
+ 22e:	2f 5f       	subi	r18, 0xFF	; 255
+ 230:	3f 4f       	sbci	r19, 0xFF	; 255
+ 232:	30 93 23 01 	sts	0x0123, r19	; 0x800123 <llegada+0x1>
+ 236:	20 93 22 01 	sts	0x0122, r18	; 0x800122 <llegada>
+ 23a:	20 91 27 01 	lds	r18, 0x0127	; 0x800127 <dato_recibido>
+ 23e:	fc 01       	movw	r30, r24
+ 240:	e4 5c       	subi	r30, 0xC4	; 196
+ 242:	fd 4f       	sbci	r31, 0xFD	; 253
+ 244:	20 83       	st	Z, r18
+	}
+	
+	if (llegada>1)
+ 246:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <llegada>
+ 24a:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <llegada+0x1>
+ 24e:	02 97       	sbiw	r24, 0x02	; 2
+ 250:	24 f1       	brlt	.+72     	; 0x29a <__vector_20+0xda>
+	{
+		if (cadena[1]=='a') ledsport |= (1<<(cadena[0]-48));
+ 252:	80 91 3d 02 	lds	r24, 0x023D	; 0x80023d <cadena+0x1>
+ 256:	81 36       	cpi	r24, 0x61	; 97
+ 258:	71 f4       	brne	.+28     	; 0x276 <__vector_20+0xb6>
+ 25a:	3b b1       	in	r19, 0x0b	; 11
+ 25c:	20 91 3c 02 	lds	r18, 0x023C	; 0x80023c <cadena>
+ 260:	20 53       	subi	r18, 0x30	; 48
+ 262:	81 e0       	ldi	r24, 0x01	; 1
+ 264:	90 e0       	ldi	r25, 0x00	; 0
+ 266:	02 c0       	rjmp	.+4      	; 0x26c <__vector_20+0xac>
+ 268:	88 0f       	add	r24, r24
+ 26a:	99 1f       	adc	r25, r25
+ 26c:	2a 95       	dec	r18
+ 26e:	e2 f7       	brpl	.-8      	; 0x268 <__vector_20+0xa8>
+ 270:	83 2b       	or	r24, r19
+ 272:	8b b9       	out	0x0b, r24	; 11
+ 274:	12 c0       	rjmp	.+36     	; 0x29a <__vector_20+0xda>
+		else ledsport&=~ (1<<(cadena[0]-48));
+ 276:	2b b1       	in	r18, 0x0b	; 11
+ 278:	30 91 3c 02 	lds	r19, 0x023C	; 0x80023c <cadena>
+ 27c:	30 53       	subi	r19, 0x30	; 48
+ 27e:	81 e0       	ldi	r24, 0x01	; 1
+ 280:	90 e0       	ldi	r25, 0x00	; 0
+ 282:	02 c0       	rjmp	.+4      	; 0x288 <__vector_20+0xc8>
+ 284:	88 0f       	add	r24, r24
+ 286:	99 1f       	adc	r25, r25
+ 288:	3a 95       	dec	r19
+ 28a:	e2 f7       	brpl	.-8      	; 0x284 <__vector_20+0xc4>
+ 28c:	80 95       	com	r24
+ 28e:	82 23       	and	r24, r18
+ 290:	8b b9       	out	0x0b, r24	; 11
+ 292:	03 c0       	rjmp	.+6      	; 0x29a <__vector_20+0xda>
+	
+	if ((dato_recibido=='l')&&(llegada>1))   //SI EL DATO DE ENTRADA ES ENTER
+	{
+		llegada=0;
+	}
+	else if ((dato_recibido=='r')&&(llegada>1))
+ 294:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <dato_recibido>
+ 298:	c5 cf       	rjmp	.-118    	; 0x224 <__vector_20+0x64>
+	{
+		if (cadena[1]=='a') ledsport |= (1<<(cadena[0]-48));
+		else ledsport&=~ (1<<(cadena[0]-48));
+	}
+
+}
+ 29a:	ff 91       	pop	r31
+ 29c:	ef 91       	pop	r30
+ 29e:	9f 91       	pop	r25
+ 2a0:	8f 91       	pop	r24
+ 2a2:	3f 91       	pop	r19
+ 2a4:	2f 91       	pop	r18
+ 2a6:	0f 90       	pop	r0
+ 2a8:	0f be       	out	0x3f, r0	; 63
+ 2aa:	0f 90       	pop	r0
+ 2ac:	1f 90       	pop	r1
+ 2ae:	18 95       	reti
+
+000002b0 <pines>:
+
+//////////////////////////////////////////////////////////////
+
+void pines()
+{
+	DDRD = 0B00111110;
+ 2b0:	8e e3       	ldi	r24, 0x3E	; 62
+ 2b2:	8a b9       	out	0x0a, r24	; 10
+	PORTD= 0B11000000;  //ACTIVA PULL/UP PULSADORES
+ 2b4:	80 ec       	ldi	r24, 0xC0	; 192
+ 2b6:	8b b9       	out	0x0b, r24	; 11
+	
+	baddr=0;
+ 2b8:	14 b8       	out	0x04, r1	; 4
+	bapor=255;
+ 2ba:	9f ef       	ldi	r25, 0xFF	; 255
+ 2bc:	95 b9       	out	0x05, r25	; 5
+	bbddr=0;
+ 2be:	17 b8       	out	0x07, r1	; 7
+	bbpor=255;
+ 2c0:	98 b9       	out	0x08, r25	; 8
+	
+	PORTA=0;
+ 2c2:	12 b8       	out	0x02, r1	; 2
+	PORTA=0b11000000;	
+ 2c4:	82 b9       	out	0x02, r24	; 2
+ 2c6:	08 95       	ret
+
+000002c8 <lectura_analoga>:
+
+
+////////////////////////////////////////////////////////////
+int lectura_analoga(uint8_t canal)
+{
+	ADMUX=canal;
+ 2c8:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7e007c>
+	DIDR0=0B111111;
+ 2cc:	8f e3       	ldi	r24, 0x3F	; 63
+ 2ce:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <__TEXT_REGION_LENGTH__+0x7e007e>
+	ADCSRA=0B11000110;
+ 2d2:	86 ec       	ldi	r24, 0xC6	; 198
+ 2d4:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7e007a>
+	while (ADCSRA & (1<<ADSC)); //espera que complete la conversion
+ 2d8:	ea e7       	ldi	r30, 0x7A	; 122
+ 2da:	f0 e0       	ldi	r31, 0x00	; 0
+ 2dc:	80 81       	ld	r24, Z
+ 2de:	86 fd       	sbrc	r24, 6
+ 2e0:	fd cf       	rjmp	.-6      	; 0x2dc <lectura_analoga+0x14>
+	return ADCW;
+ 2e2:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7e0078>
+ 2e6:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7e0079>
+}
+ 2ea:	08 95       	ret
+
+000002ec <lectura_switches>:
+};
+
+struct mapaswitches switches[2]={{6,(1<<6)},{7,(1<<7)}};
+	
+void lectura_switches()
+{
+ 2ec:	7f 92       	push	r7
+ 2ee:	8f 92       	push	r8
+ 2f0:	9f 92       	push	r9
+ 2f2:	af 92       	push	r10
+ 2f4:	bf 92       	push	r11
+ 2f6:	cf 92       	push	r12
+ 2f8:	df 92       	push	r13
+ 2fa:	ef 92       	push	r14
+ 2fc:	ff 92       	push	r15
+ 2fe:	0f 93       	push	r16
+ 300:	1f 93       	push	r17
+ 302:	cf 93       	push	r28
+ 304:	df 93       	push	r29
+ 306:	c7 e1       	ldi	r28, 0x17	; 23
+ 308:	d1 e0       	ldi	r29, 0x01	; 1
+ 30a:	03 e0       	ldi	r16, 0x03	; 3
+	for (int i= 0; i<2; i++)
+	{
+		uint8_t currentReading=(switchpin & (1<<switches[i]._id));
+ 30c:	aa 24       	eor	r10, r10
+ 30e:	a3 94       	inc	r10
+ 310:	b1 2c       	mov	r11, r1
+			char valueToSend;
+			if (currentReading == (1<<switches[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+			else  valueToSend = 2;
+		
+			//pack a byte array with data about the state change
+			 dataToSend[0]=DIGITAL_TYPE;
+ 312:	0f 2e       	mov	r0, r31
+ 314:	f8 e2       	ldi	r31, 0x28	; 40
+ 316:	ef 2e       	mov	r14, r31
+ 318:	f1 e0       	ldi	r31, 0x01	; 1
+ 31a:	ff 2e       	mov	r15, r31
+ 31c:	f0 2d       	mov	r31, r0
+ 31e:	99 24       	eor	r9, r9
+ 320:	93 94       	inc	r9
+			 dataToSend[1]=i+3;
+			 dataToSend[2]=valueToSend;
+			 dataToSend[3]=255;
+ 322:	88 24       	eor	r8, r8
+ 324:	8a 94       	dec	r8
+	{
+		uint8_t currentReading=(switchpin & (1<<switches[i]._id));
+		if (switches[i].beforeReading != currentReading) { //there is a state change, or this is the very first time checking state	
+			char valueToSend;
+			if (currentReading == (1<<switches[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+			else  valueToSend = 2;
+ 326:	68 94       	set
+ 328:	77 24       	eor	r7, r7
+ 32a:	71 f8       	bld	r7, 1
+	
+void lectura_switches()
+{
+	for (int i= 0; i<2; i++)
+	{
+		uint8_t currentReading=(switchpin & (1<<switches[i]._id));
+ 32c:	19 b1       	in	r17, 0x09	; 9
+ 32e:	6e 01       	movw	r12, r28
+ 330:	fe 01       	movw	r30, r28
+ 332:	31 97       	sbiw	r30, 0x01	; 1
+ 334:	c5 01       	movw	r24, r10
+ 336:	00 80       	ld	r0, Z
+ 338:	02 c0       	rjmp	.+4      	; 0x33e <lectura_switches+0x52>
+ 33a:	88 0f       	add	r24, r24
+ 33c:	99 1f       	adc	r25, r25
+ 33e:	0a 94       	dec	r0
+ 340:	e2 f7       	brpl	.-8      	; 0x33a <lectura_switches+0x4e>
+ 342:	18 23       	and	r17, r24
+		if (switches[i].beforeReading != currentReading) { //there is a state change, or this is the very first time checking state	
+ 344:	28 81       	ld	r18, Y
+ 346:	21 17       	cp	r18, r17
+ 348:	91 f0       	breq	.+36     	; 0x36e <lectura_switches+0x82>
+			char valueToSend;
+			if (currentReading == (1<<switches[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 34a:	21 2f       	mov	r18, r17
+ 34c:	30 e0       	ldi	r19, 0x00	; 0
+ 34e:	82 17       	cp	r24, r18
+ 350:	93 07       	cpc	r25, r19
+ 352:	11 f0       	breq	.+4      	; 0x358 <lectura_switches+0x6c>
+			else  valueToSend = 2;
+ 354:	87 2d       	mov	r24, r7
+ 356:	01 c0       	rjmp	.+2      	; 0x35a <lectura_switches+0x6e>
+	for (int i= 0; i<2; i++)
+	{
+		uint8_t currentReading=(switchpin & (1<<switches[i]._id));
+		if (switches[i].beforeReading != currentReading) { //there is a state change, or this is the very first time checking state	
+			char valueToSend;
+			if (currentReading == (1<<switches[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 358:	89 2d       	mov	r24, r9
+			else  valueToSend = 2;
+		
+			//pack a byte array with data about the state change
+			 dataToSend[0]=DIGITAL_TYPE;
+ 35a:	f7 01       	movw	r30, r14
+ 35c:	90 82       	st	Z, r9
+			 dataToSend[1]=i+3;
+ 35e:	01 83       	std	Z+1, r16	; 0x01
+			 dataToSend[2]=valueToSend;
+ 360:	82 83       	std	Z+2, r24	; 0x02
+			 dataToSend[3]=255;
+ 362:	83 82       	std	Z+3, r8	; 0x03
+			envia_cadena(dataToSend); //send it over serial.
+ 364:	c7 01       	movw	r24, r14
+ 366:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <envia_cadena>
+			switches[i].beforeReading=currentReading;
+ 36a:	f6 01       	movw	r30, r12
+ 36c:	10 83       	st	Z, r17
+ 36e:	22 96       	adiw	r28, 0x02	; 2
+ 370:	0f 5f       	subi	r16, 0xFF	; 255
+
+struct mapaswitches switches[2]={{6,(1<<6)},{7,(1<<7)}};
+	
+void lectura_switches()
+{
+	for (int i= 0; i<2; i++)
+ 372:	05 30       	cpi	r16, 0x05	; 5
+ 374:	d9 f6       	brne	.-74     	; 0x32c <lectura_switches+0x40>
+			 dataToSend[3]=255;
+			envia_cadena(dataToSend); //send it over serial.
+			switches[i].beforeReading=currentReading;
+		}
+	}
+}
+ 376:	df 91       	pop	r29
+ 378:	cf 91       	pop	r28
+ 37a:	1f 91       	pop	r17
+ 37c:	0f 91       	pop	r16
+ 37e:	ff 90       	pop	r15
+ 380:	ef 90       	pop	r14
+ 382:	df 90       	pop	r13
+ 384:	cf 90       	pop	r12
+ 386:	bf 90       	pop	r11
+ 388:	af 90       	pop	r10
+ 38a:	9f 90       	pop	r9
+ 38c:	8f 90       	pop	r8
+ 38e:	7f 90       	pop	r7
+ 390:	08 95       	ret
+
+00000392 <lectura_botones>:
+};
+
+struct mapabotones botones[2]={{6,(1<<6)},{7,(1<<7)}};
+
+void lectura_botones()
+{
+ 392:	7f 92       	push	r7
+ 394:	8f 92       	push	r8
+ 396:	9f 92       	push	r9
+ 398:	af 92       	push	r10
+ 39a:	bf 92       	push	r11
+ 39c:	cf 92       	push	r12
+ 39e:	df 92       	push	r13
+ 3a0:	ef 92       	push	r14
+ 3a2:	ff 92       	push	r15
+ 3a4:	0f 93       	push	r16
+ 3a6:	1f 93       	push	r17
+ 3a8:	cf 93       	push	r28
+ 3aa:	df 93       	push	r29
+ 3ac:	c3 e1       	ldi	r28, 0x13	; 19
+ 3ae:	d1 e0       	ldi	r29, 0x01	; 1
+ 3b0:	01 e0       	ldi	r16, 0x01	; 1
+	for (int i= 0; i<2; i++)
+	{
+		uint8_t currentReading=(buttonpin & (1<<botones[i]._id));
+ 3b2:	aa 24       	eor	r10, r10
+ 3b4:	a3 94       	inc	r10
+ 3b6:	b1 2c       	mov	r11, r1
+			char valueToSend;
+			if (currentReading == (1<<botones[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+			else  valueToSend = 2;
+			
+			//pack a byte array with data about the state change
+			dataToSend[0]=DIGITAL_TYPE;
+ 3b8:	0f 2e       	mov	r0, r31
+ 3ba:	f8 e2       	ldi	r31, 0x28	; 40
+ 3bc:	ef 2e       	mov	r14, r31
+ 3be:	f1 e0       	ldi	r31, 0x01	; 1
+ 3c0:	ff 2e       	mov	r15, r31
+ 3c2:	f0 2d       	mov	r31, r0
+ 3c4:	99 24       	eor	r9, r9
+ 3c6:	93 94       	inc	r9
+			dataToSend[1]=i+1;
+			dataToSend[2]=valueToSend;
+			dataToSend[3]=255;
+ 3c8:	88 24       	eor	r8, r8
+ 3ca:	8a 94       	dec	r8
+	{
+		uint8_t currentReading=(buttonpin & (1<<botones[i]._id));
+		if (botones[i].beforeReading != currentReading) { //there is a state change, or this is the very first time checking state
+			char valueToSend;
+			if (currentReading == (1<<botones[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+			else  valueToSend = 2;
+ 3cc:	68 94       	set
+ 3ce:	77 24       	eor	r7, r7
+ 3d0:	71 f8       	bld	r7, 1
+
+void lectura_botones()
+{
+	for (int i= 0; i<2; i++)
+	{
+		uint8_t currentReading=(buttonpin & (1<<botones[i]._id));
+ 3d2:	10 b1       	in	r17, 0x00	; 0
+ 3d4:	6e 01       	movw	r12, r28
+ 3d6:	fe 01       	movw	r30, r28
+ 3d8:	31 97       	sbiw	r30, 0x01	; 1
+ 3da:	c5 01       	movw	r24, r10
+ 3dc:	00 80       	ld	r0, Z
+ 3de:	02 c0       	rjmp	.+4      	; 0x3e4 <lectura_botones+0x52>
+ 3e0:	88 0f       	add	r24, r24
+ 3e2:	99 1f       	adc	r25, r25
+ 3e4:	0a 94       	dec	r0
+ 3e6:	e2 f7       	brpl	.-8      	; 0x3e0 <lectura_botones+0x4e>
+ 3e8:	18 23       	and	r17, r24
+		if (botones[i].beforeReading != currentReading) { //there is a state change, or this is the very first time checking state
+ 3ea:	28 81       	ld	r18, Y
+ 3ec:	21 17       	cp	r18, r17
+ 3ee:	91 f0       	breq	.+36     	; 0x414 <__LOCK_REGION_LENGTH__+0x14>
+			char valueToSend;
+			if (currentReading == (1<<botones[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 3f0:	21 2f       	mov	r18, r17
+ 3f2:	30 e0       	ldi	r19, 0x00	; 0
+ 3f4:	82 17       	cp	r24, r18
+ 3f6:	93 07       	cpc	r25, r19
+ 3f8:	11 f0       	breq	.+4      	; 0x3fe <lectura_botones+0x6c>
+			else  valueToSend = 2;
+ 3fa:	87 2d       	mov	r24, r7
+ 3fc:	01 c0       	rjmp	.+2      	; 0x400 <__LOCK_REGION_LENGTH__>
+	for (int i= 0; i<2; i++)
+	{
+		uint8_t currentReading=(buttonpin & (1<<botones[i]._id));
+		if (botones[i].beforeReading != currentReading) { //there is a state change, or this is the very first time checking state
+			char valueToSend;
+			if (currentReading == (1<<botones[i]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 3fe:	89 2d       	mov	r24, r9
+			else  valueToSend = 2;
+			
+			//pack a byte array with data about the state change
+			dataToSend[0]=DIGITAL_TYPE;
+ 400:	f7 01       	movw	r30, r14
+ 402:	90 82       	st	Z, r9
+			dataToSend[1]=i+1;
+ 404:	01 83       	std	Z+1, r16	; 0x01
+			dataToSend[2]=valueToSend;
+ 406:	82 83       	std	Z+2, r24	; 0x02
+			dataToSend[3]=255;
+ 408:	83 82       	std	Z+3, r8	; 0x03
+			envia_cadena(dataToSend); //send it over serial.
+ 40a:	c7 01       	movw	r24, r14
+ 40c:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <envia_cadena>
+			botones[i].beforeReading=currentReading;
+ 410:	f6 01       	movw	r30, r12
+ 412:	10 83       	st	Z, r17
+ 414:	22 96       	adiw	r28, 0x02	; 2
+ 416:	0f 5f       	subi	r16, 0xFF	; 255
+
+struct mapabotones botones[2]={{6,(1<<6)},{7,(1<<7)}};
+
+void lectura_botones()
+{
+	for (int i= 0; i<2; i++)
+ 418:	03 30       	cpi	r16, 0x03	; 3
+ 41a:	d9 f6       	brne	.-74     	; 0x3d2 <lectura_botones+0x40>
+			dataToSend[3]=255;
+			envia_cadena(dataToSend); //send it over serial.
+			botones[i].beforeReading=currentReading;
+		}
+	}
+}
+ 41c:	df 91       	pop	r29
+ 41e:	cf 91       	pop	r28
+ 420:	1f 91       	pop	r17
+ 422:	0f 91       	pop	r16
+ 424:	ff 90       	pop	r15
+ 426:	ef 90       	pop	r14
+ 428:	df 90       	pop	r13
+ 42a:	cf 90       	pop	r12
+ 42c:	bf 90       	pop	r11
+ 42e:	af 90       	pop	r10
+ 430:	9f 90       	pop	r9
+ 432:	8f 90       	pop	r8
+ 434:	7f 90       	pop	r7
+ 436:	08 95       	ret
+
+00000438 <lectura_potenciometros>:
+	int  beforeReading;
+};
+struct mapapotenciometros potenciometros[6]={{a1,0},{a2,0},{a3,0},{a4,0},{a5,0},{a6,0}};
+
+void lectura_potenciometros()
+{
+ 438:	6f 92       	push	r6
+ 43a:	7f 92       	push	r7
+ 43c:	8f 92       	push	r8
+ 43e:	9f 92       	push	r9
+ 440:	af 92       	push	r10
+ 442:	bf 92       	push	r11
+ 444:	cf 92       	push	r12
+ 446:	df 92       	push	r13
+ 448:	ef 92       	push	r14
+ 44a:	ff 92       	push	r15
+ 44c:	0f 93       	push	r16
+ 44e:	1f 93       	push	r17
+ 450:	cf 93       	push	r28
+ 452:	df 93       	push	r29
+ 454:	00 e0       	ldi	r16, 0x00	; 0
+ 456:	11 e0       	ldi	r17, 0x01	; 1
+ 458:	bb 24       	eor	r11, r11
+ 45a:	b3 94       	inc	r11
+	        }
+	        
+			uint8_t lsbyte = (uint8_t) lectura_adc;
+			uint8_t msbyte = (uint8_t) (lectura_adc >> 8);
+			
+			dataToSend[0]=CONTINUOUS_TYPE;
+ 45c:	0f 2e       	mov	r0, r31
+ 45e:	f8 e2       	ldi	r31, 0x28	; 40
+ 460:	ef 2e       	mov	r14, r31
+ 462:	f1 e0       	ldi	r31, 0x01	; 1
+ 464:	ff 2e       	mov	r15, r31
+ 466:	f0 2d       	mov	r31, r0
+ 468:	0f 2e       	mov	r0, r31
+ 46a:	f3 e0       	ldi	r31, 0x03	; 3
+ 46c:	af 2e       	mov	r10, r31
+ 46e:	f0 2d       	mov	r31, r0
+	   { //simple software way of factoring out fluctations in reading due to noise/power
+	        
+	        //check for edge cases, so pot doesn't miss full CW or CCW positions given software filtering
+	        if (lectura_adc <= ANALOG_CHANGE_THRESHOLD)
+			{
+		        lectura_adc = 0;
+ 470:	81 2c       	mov	r8, r1
+ 472:	91 2c       	mov	r9, r1
+		        } else if (lectura_adc >= 1023 - ANALOG_CHANGE_THRESHOLD) {
+		        lectura_adc = 1023;
+ 474:	66 24       	eor	r6, r6
+ 476:	6a 94       	dec	r6
+ 478:	0f 2e       	mov	r0, r31
+ 47a:	f3 e0       	ldi	r31, 0x03	; 3
+ 47c:	7f 2e       	mov	r7, r31
+ 47e:	f0 2d       	mov	r31, r0
+ 480:	68 01       	movw	r12, r16
+
+void lectura_potenciometros()
+{
+	for (int k=0; k<6;k++)
+	{
+		int lectura_adc=lectura_analoga(potenciometros[k]._id);
+ 482:	f8 01       	movw	r30, r16
+ 484:	80 81       	ld	r24, Z
+ 486:	0e 94 64 01 	call	0x2c8	; 0x2c8 <lectura_analoga>
+ 48a:	ec 01       	movw	r28, r24
+		int difference = potenciometros[k].beforeReading - lectura_adc;
+ 48c:	f8 01       	movw	r30, r16
+ 48e:	21 81       	ldd	r18, Z+1	; 0x01
+ 490:	32 81       	ldd	r19, Z+2	; 0x02
+ 492:	28 1b       	sub	r18, r24
+ 494:	39 0b       	sbc	r19, r25
+        if (abs(difference) > ANALOG_CHANGE_THRESHOLD) 
+ 496:	c9 01       	movw	r24, r18
+ 498:	99 23       	and	r25, r25
+ 49a:	24 f4       	brge	.+8      	; 0x4a4 <lectura_potenciometros+0x6c>
+ 49c:	88 27       	eor	r24, r24
+ 49e:	99 27       	eor	r25, r25
+ 4a0:	82 1b       	sub	r24, r18
+ 4a2:	93 0b       	sbc	r25, r19
+ 4a4:	07 97       	sbiw	r24, 0x07	; 7
+ 4a6:	bc f0       	brlt	.+46     	; 0x4d6 <lectura_potenciometros+0x9e>
+	   { //simple software way of factoring out fluctations in reading due to noise/power
+	        
+	        //check for edge cases, so pot doesn't miss full CW or CCW positions given software filtering
+	        if (lectura_adc <= ANALOG_CHANGE_THRESHOLD)
+ 4a8:	c7 30       	cpi	r28, 0x07	; 7
+ 4aa:	d1 05       	cpc	r29, r1
+ 4ac:	3c f0       	brlt	.+14     	; 0x4bc <lectura_potenciometros+0x84>
+			{
+		        lectura_adc = 0;
+		        } else if (lectura_adc >= 1023 - ANALOG_CHANGE_THRESHOLD) {
+ 4ae:	c9 3f       	cpi	r28, 0xF9	; 249
+ 4b0:	f3 e0       	ldi	r31, 0x03	; 3
+ 4b2:	df 07       	cpc	r29, r31
+ 4b4:	2c f0       	brlt	.+10     	; 0x4c0 <lectura_potenciometros+0x88>
+		        lectura_adc = 1023;
+ 4b6:	c6 2d       	mov	r28, r6
+ 4b8:	d7 2d       	mov	r29, r7
+ 4ba:	02 c0       	rjmp	.+4      	; 0x4c0 <lectura_potenciometros+0x88>
+	   { //simple software way of factoring out fluctations in reading due to noise/power
+	        
+	        //check for edge cases, so pot doesn't miss full CW or CCW positions given software filtering
+	        if (lectura_adc <= ANALOG_CHANGE_THRESHOLD)
+			{
+		        lectura_adc = 0;
+ 4bc:	c8 2d       	mov	r28, r8
+ 4be:	d9 2d       	mov	r29, r9
+	        }
+	        
+			uint8_t lsbyte = (uint8_t) lectura_adc;
+			uint8_t msbyte = (uint8_t) (lectura_adc >> 8);
+			
+			dataToSend[0]=CONTINUOUS_TYPE;
+ 4c0:	f7 01       	movw	r30, r14
+ 4c2:	a0 82       	st	Z, r10
+			dataToSend[1]=k+1;
+ 4c4:	b1 82       	std	Z+1, r11	; 0x01
+		        } else if (lectura_adc >= 1023 - ANALOG_CHANGE_THRESHOLD) {
+		        lectura_adc = 1023;
+	        }
+	        
+			uint8_t lsbyte = (uint8_t) lectura_adc;
+			uint8_t msbyte = (uint8_t) (lectura_adc >> 8);
+ 4c6:	d2 83       	std	Z+2, r29	; 0x02
+		        lectura_adc = 0;
+		        } else if (lectura_adc >= 1023 - ANALOG_CHANGE_THRESHOLD) {
+		        lectura_adc = 1023;
+	        }
+	        
+			uint8_t lsbyte = (uint8_t) lectura_adc;
+ 4c8:	c3 83       	std	Z+3, r28	; 0x03
+			
+			dataToSend[0]=CONTINUOUS_TYPE;
+			dataToSend[1]=k+1;
+			dataToSend[2]=msbyte;  
+			dataToSend[3]=lsbyte;     
+			envia_cadena(dataToSend); //send it over serial	        
+ 4ca:	c7 01       	movw	r24, r14
+ 4cc:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <envia_cadena>
+	        
+	        //update internal state
+	        potenciometros[k].beforeReading = lectura_adc;
+ 4d0:	f6 01       	movw	r30, r12
+ 4d2:	d2 83       	std	Z+2, r29	; 0x02
+ 4d4:	c1 83       	std	Z+1, r28	; 0x01
+ 4d6:	0d 5f       	subi	r16, 0xFD	; 253
+ 4d8:	1f 4f       	sbci	r17, 0xFF	; 255
+ 4da:	b3 94       	inc	r11
+};
+struct mapapotenciometros potenciometros[6]={{a1,0},{a2,0},{a3,0},{a4,0},{a5,0},{a6,0}};
+
+void lectura_potenciometros()
+{
+	for (int k=0; k<6;k++)
+ 4dc:	f7 e0       	ldi	r31, 0x07	; 7
+ 4de:	bf 12       	cpse	r11, r31
+ 4e0:	cf cf       	rjmp	.-98     	; 0x480 <lectura_potenciometros+0x48>
+	        //update internal state
+	        potenciometros[k].beforeReading = lectura_adc;
+        }		
+	}
+	
+}
+ 4e2:	df 91       	pop	r29
+ 4e4:	cf 91       	pop	r28
+ 4e6:	1f 91       	pop	r17
+ 4e8:	0f 91       	pop	r16
+ 4ea:	ff 90       	pop	r15
+ 4ec:	ef 90       	pop	r14
+ 4ee:	df 90       	pop	r13
+ 4f0:	cf 90       	pop	r12
+ 4f2:	bf 90       	pop	r11
+ 4f4:	af 90       	pop	r10
+ 4f6:	9f 90       	pop	r9
+ 4f8:	8f 90       	pop	r8
+ 4fa:	7f 90       	pop	r7
+ 4fc:	6f 90       	pop	r6
+ 4fe:	08 95       	ret
+
+00000500 <conectar>:
+	//pack a byte array with data about the state change
+};
+struct mapaconexiones conexion[16];
+	
+void conectar()
+{	
+ 500:	cf 93       	push	r28
+ 502:	ac e2       	ldi	r26, 0x2C	; 44
+ 504:	b1 e0       	ldi	r27, 0x01	; 1
+ 506:	60 e0       	ldi	r22, 0x00	; 0
+	for (int i=0; i<8; i++)
+	{
+		conexion[i]._id=i;
+		for (int h=0; h<16; h++)
+ 508:	c0 e0       	ldi	r28, 0x00	; 0
+ 50a:	70 e0       	ldi	r23, 0x00	; 0
+		{
+			if (h<8) conexion[i].beforeReading[h]=(1<<h); 
+			else conexion[i].beforeReading[h]=(1<<(h-8));			
+ 50c:	21 e0       	ldi	r18, 0x01	; 1
+	
+void conectar()
+{	
+	for (int i=0; i<8; i++)
+	{
+		conexion[i]._id=i;
+ 50e:	fd 01       	movw	r30, r26
+ 510:	61 93       	st	Z+, r22
+		for (int h=0; h<16; h++)
+ 512:	8c 2f       	mov	r24, r28
+ 514:	97 2f       	mov	r25, r23
+		{
+			if (h<8) conexion[i].beforeReading[h]=(1<<h); 
+ 516:	88 30       	cpi	r24, 0x08	; 8
+ 518:	91 05       	cpc	r25, r1
+ 51a:	44 f4       	brge	.+16     	; 0x52c <conectar+0x2c>
+ 51c:	32 2f       	mov	r19, r18
+ 51e:	08 2e       	mov	r0, r24
+ 520:	01 c0       	rjmp	.+2      	; 0x524 <conectar+0x24>
+ 522:	33 0f       	add	r19, r19
+ 524:	0a 94       	dec	r0
+ 526:	ea f7       	brpl	.-6      	; 0x522 <conectar+0x22>
+ 528:	30 83       	st	Z, r19
+ 52a:	09 c0       	rjmp	.+18     	; 0x53e <conectar+0x3e>
+ 52c:	ac 01       	movw	r20, r24
+ 52e:	48 50       	subi	r20, 0x08	; 8
+ 530:	51 09       	sbc	r21, r1
+			else conexion[i].beforeReading[h]=(1<<(h-8));			
+ 532:	32 2f       	mov	r19, r18
+ 534:	01 c0       	rjmp	.+2      	; 0x538 <conectar+0x38>
+ 536:	33 0f       	add	r19, r19
+ 538:	4a 95       	dec	r20
+ 53a:	ea f7       	brpl	.-6      	; 0x536 <conectar+0x36>
+ 53c:	30 83       	st	Z, r19
+void conectar()
+{	
+	for (int i=0; i<8; i++)
+	{
+		conexion[i]._id=i;
+		for (int h=0; h<16; h++)
+ 53e:	01 96       	adiw	r24, 0x01	; 1
+ 540:	31 96       	adiw	r30, 0x01	; 1
+ 542:	80 31       	cpi	r24, 0x10	; 16
+ 544:	91 05       	cpc	r25, r1
+ 546:	39 f7       	brne	.-50     	; 0x516 <conectar+0x16>
+ 548:	6f 5f       	subi	r22, 0xFF	; 255
+ 54a:	51 96       	adiw	r26, 0x11	; 17
+};
+struct mapaconexiones conexion[16];
+	
+void conectar()
+{	
+	for (int i=0; i<8; i++)
+ 54c:	68 30       	cpi	r22, 0x08	; 8
+ 54e:	f9 f6       	brne	.-66     	; 0x50e <conectar+0xe>
+ 550:	a5 eb       	ldi	r26, 0xB5	; 181
+ 552:	b1 e0       	ldi	r27, 0x01	; 1
+		
+	}	
+	for (int i=8; i<16; i++)
+	{
+		conexion[i]._id=i;
+		for (int h=0; h<16; h++)
+ 554:	c0 e0       	ldi	r28, 0x00	; 0
+ 556:	70 e0       	ldi	r23, 0x00	; 0
+		{
+			if (h<8) conexion[i].beforeReading[h]=(1<<h);
+			else conexion[i].beforeReading[h]=(1<<(h-8));			
+ 558:	21 e0       	ldi	r18, 0x01	; 1
+ 55a:	fd 01       	movw	r30, r26
+ 55c:	31 97       	sbiw	r30, 0x01	; 1
+		}
+		
+	}	
+	for (int i=8; i<16; i++)
+	{
+		conexion[i]._id=i;
+ 55e:	60 83       	st	Z, r22
+ 560:	fd 01       	movw	r30, r26
+		for (int h=0; h<16; h++)
+ 562:	8c 2f       	mov	r24, r28
+ 564:	97 2f       	mov	r25, r23
+		{
+			if (h<8) conexion[i].beforeReading[h]=(1<<h);
+ 566:	88 30       	cpi	r24, 0x08	; 8
+ 568:	91 05       	cpc	r25, r1
+ 56a:	44 f4       	brge	.+16     	; 0x57c <conectar+0x7c>
+ 56c:	32 2f       	mov	r19, r18
+ 56e:	08 2e       	mov	r0, r24
+ 570:	01 c0       	rjmp	.+2      	; 0x574 <conectar+0x74>
+ 572:	33 0f       	add	r19, r19
+ 574:	0a 94       	dec	r0
+ 576:	ea f7       	brpl	.-6      	; 0x572 <conectar+0x72>
+ 578:	30 83       	st	Z, r19
+ 57a:	09 c0       	rjmp	.+18     	; 0x58e <conectar+0x8e>
+ 57c:	ac 01       	movw	r20, r24
+ 57e:	48 50       	subi	r20, 0x08	; 8
+ 580:	51 09       	sbc	r21, r1
+			else conexion[i].beforeReading[h]=(1<<(h-8));			
+ 582:	32 2f       	mov	r19, r18
+ 584:	01 c0       	rjmp	.+2      	; 0x588 <conectar+0x88>
+ 586:	33 0f       	add	r19, r19
+ 588:	4a 95       	dec	r20
+ 58a:	ea f7       	brpl	.-6      	; 0x586 <conectar+0x86>
+ 58c:	30 83       	st	Z, r19
+		
+	}	
+	for (int i=8; i<16; i++)
+	{
+		conexion[i]._id=i;
+		for (int h=0; h<16; h++)
+ 58e:	01 96       	adiw	r24, 0x01	; 1
+ 590:	31 96       	adiw	r30, 0x01	; 1
+ 592:	80 31       	cpi	r24, 0x10	; 16
+ 594:	91 05       	cpc	r25, r1
+ 596:	39 f7       	brne	.-50     	; 0x566 <conectar+0x66>
+ 598:	6f 5f       	subi	r22, 0xFF	; 255
+ 59a:	51 96       	adiw	r26, 0x11	; 17
+			if (h<8) conexion[i].beforeReading[h]=(1<<h); 
+			else conexion[i].beforeReading[h]=(1<<(h-8));			
+		}
+		
+	}	
+	for (int i=8; i<16; i++)
+ 59c:	60 31       	cpi	r22, 0x10	; 16
+ 59e:	e9 f6       	brne	.-70     	; 0x55a <conectar+0x5a>
+		{
+			if (h<8) conexion[i].beforeReading[h]=(1<<h);
+			else conexion[i].beforeReading[h]=(1<<(h-8));			
+		}		
+	}			
+}	
+ 5a0:	cf 91       	pop	r28
+ 5a2:	08 95       	ret
+
+000005a4 <determinarconeciones>:
+void determinarconeciones()
+{
+ 5a4:	2f 92       	push	r2
+ 5a6:	3f 92       	push	r3
+ 5a8:	4f 92       	push	r4
+ 5aa:	5f 92       	push	r5
+ 5ac:	6f 92       	push	r6
+ 5ae:	7f 92       	push	r7
+ 5b0:	8f 92       	push	r8
+ 5b2:	9f 92       	push	r9
+ 5b4:	af 92       	push	r10
+ 5b6:	bf 92       	push	r11
+ 5b8:	cf 92       	push	r12
+ 5ba:	df 92       	push	r13
+ 5bc:	ef 92       	push	r14
+ 5be:	ff 92       	push	r15
+ 5c0:	0f 93       	push	r16
+ 5c2:	1f 93       	push	r17
+ 5c4:	cf 93       	push	r28
+ 5c6:	df 93       	push	r29
+ 5c8:	00 d0       	rcall	.+0      	; 0x5ca <determinarconeciones+0x26>
+ 5ca:	00 d0       	rcall	.+0      	; 0x5cc <determinarconeciones+0x28>
+ 5cc:	1f 92       	push	r1
+ 5ce:	cd b7       	in	r28, 0x3d	; 61
+ 5d0:	de b7       	in	r29, 0x3e	; 62
+ 5d2:	4d e2       	ldi	r20, 0x2D	; 45
+ 5d4:	51 e0       	ldi	r21, 0x01	; 1
+ 5d6:	5a 83       	std	Y+2, r21	; 0x02
+ 5d8:	49 83       	std	Y+1, r20	; 0x01
+	
+	int i;
+	for (i=0; i<NUMBER_OF_JACKS; i++)
+ 5da:	61 2c       	mov	r6, r1
+ 5dc:	71 2c       	mov	r7, r1
+			bapor&=~ (1<<x);;
+		}
+		else
+		{ 
+			x=i-8;
+			bbddr |= (1<<x);
+ 5de:	cc 24       	eor	r12, r12
+ 5e0:	c3 94       	inc	r12
+ 5e2:	d1 2c       	mov	r13, r1
+					conexion[i].beforeReading[j]=currentReading;
+									
+				//	if (conexion[i].beforeReading[j]!=conexion[j].beforeReading[i])
+				//	{
+						//pack a byte array with data about the state change
+						dataToSend[0]=JACK_TYPE;
+ 5e4:	0f 2e       	mov	r0, r31
+ 5e6:	f8 e2       	ldi	r31, 0x28	; 40
+ 5e8:	8f 2e       	mov	r8, r31
+ 5ea:	f1 e0       	ldi	r31, 0x01	; 1
+ 5ec:	9f 2e       	mov	r9, r31
+ 5ee:	f0 2d       	mov	r31, r0
+ 5f0:	68 94       	set
+ 5f2:	55 24       	eor	r5, r5
+ 5f4:	51 f8       	bld	r5, 1
+ 5f6:	38 2c       	mov	r3, r8
+ 5f8:	49 2c       	mov	r4, r9
+ 5fa:	25 2c       	mov	r2, r5
+	int i;
+	for (i=0; i<NUMBER_OF_JACKS; i++)
+	{
+		int x;
+		//cambia a salida y le pone encer
+		if (i<8)
+ 5fc:	58 e0       	ldi	r21, 0x08	; 8
+ 5fe:	65 16       	cp	r6, r21
+ 600:	71 04       	cpc	r7, r1
+ 602:	8c f4       	brge	.+34     	; 0x626 <determinarconeciones+0x82>
+		{
+			x=i;
+			baddr |= (1<<x);
+ 604:	24 b1       	in	r18, 0x04	; 4
+ 606:	c6 01       	movw	r24, r12
+ 608:	06 2c       	mov	r0, r6
+ 60a:	02 c0       	rjmp	.+4      	; 0x610 <determinarconeciones+0x6c>
+ 60c:	88 0f       	add	r24, r24
+ 60e:	99 1f       	adc	r25, r25
+ 610:	0a 94       	dec	r0
+ 612:	e2 f7       	brpl	.-8      	; 0x60c <determinarconeciones+0x68>
+ 614:	92 2f       	mov	r25, r18
+ 616:	98 2b       	or	r25, r24
+ 618:	94 b9       	out	0x04, r25	; 4
+			bapor&=~ (1<<x);;
+ 61a:	95 b1       	in	r25, 0x05	; 5
+ 61c:	80 95       	com	r24
+ 61e:	89 23       	and	r24, r25
+ 620:	85 b9       	out	0x05, r24	; 5
+ 622:	6b 82       	std	Y+3, r6	; 0x03
+ 624:	12 c0       	rjmp	.+36     	; 0x64a <determinarconeciones+0xa6>
+ 626:	c3 01       	movw	r24, r6
+ 628:	08 97       	sbiw	r24, 0x08	; 8
+ 62a:	8b 83       	std	Y+3, r24	; 0x03
+		}
+		else
+		{ 
+			x=i-8;
+			bbddr |= (1<<x);
+ 62c:	27 b1       	in	r18, 0x07	; 7
+ 62e:	f6 01       	movw	r30, r12
+ 630:	02 c0       	rjmp	.+4      	; 0x636 <determinarconeciones+0x92>
+ 632:	ee 0f       	add	r30, r30
+ 634:	ff 1f       	adc	r31, r31
+ 636:	8a 95       	dec	r24
+ 638:	e2 f7       	brpl	.-8      	; 0x632 <determinarconeciones+0x8e>
+ 63a:	cf 01       	movw	r24, r30
+ 63c:	92 2f       	mov	r25, r18
+ 63e:	98 2b       	or	r25, r24
+ 640:	97 b9       	out	0x07, r25	; 7
+			bbpor&=~ (1<<x);
+ 642:	98 b1       	in	r25, 0x08	; 8
+ 644:	80 95       	com	r24
+ 646:	89 23       	and	r24, r25
+ 648:	88 b9       	out	0x08, r24	; 8
+ 64a:	0f 2e       	mov	r0, r31
+ 64c:	fc e2       	ldi	r31, 0x2C	; 44
+ 64e:	ef 2e       	mov	r14, r31
+ 650:	f1 e0       	ldi	r31, 0x01	; 1
+ 652:	ff 2e       	mov	r15, r31
+ 654:	f0 2d       	mov	r31, r0
+ 656:	09 81       	ldd	r16, Y+1	; 0x01
+ 658:	1a 81       	ldd	r17, Y+2	; 0x02
+		}
+		//_delay_ms(50);
+		
+		//conexion[i]._id es el que esta en cero
+		for (int j = 0; j < NUMBER_OF_JACKS; j++)
+ 65a:	1c 82       	std	Y+4, r1	; 0x04
+ 65c:	1d 82       	std	Y+5, r1	; 0x05
+ 65e:	58 01       	movw	r10, r16
+ 660:	f1 e0       	ldi	r31, 0x01	; 1
+ 662:	af 1a       	sub	r10, r31
+ 664:	b1 08       	sbc	r11, r1
+		{
+			if (j != i) 
+ 666:	8c 81       	ldd	r24, Y+4	; 0x04
+ 668:	9d 81       	ldd	r25, Y+5	; 0x05
+ 66a:	86 15       	cp	r24, r6
+ 66c:	97 05       	cpc	r25, r7
+ 66e:	09 f4       	brne	.+2      	; 0x672 <determinarconeciones+0xce>
+ 670:	47 c0       	rjmp	.+142    	; 0x700 <determinarconeciones+0x15c>
+			{ 
+				int currentReading;
+				if (j<8)  currentReading = (bapin & (1<<conexion[j]._id));
+ 672:	08 97       	sbiw	r24, 0x08	; 8
+ 674:	9c f4       	brge	.+38     	; 0x69c <determinarconeciones+0xf8>
+ 676:	23 b1       	in	r18, 0x03	; 3
+ 678:	b6 01       	movw	r22, r12
+ 67a:	f7 01       	movw	r30, r14
+ 67c:	00 80       	ld	r0, Z
+ 67e:	02 c0       	rjmp	.+4      	; 0x684 <determinarconeciones+0xe0>
+ 680:	66 0f       	add	r22, r22
+ 682:	77 1f       	adc	r23, r23
+ 684:	0a 94       	dec	r0
+ 686:	e2 f7       	brpl	.-8      	; 0x680 <determinarconeciones+0xdc>
+ 688:	30 e0       	ldi	r19, 0x00	; 0
+ 68a:	26 23       	and	r18, r22
+ 68c:	37 23       	and	r19, r23
+				else      currentReading = (bbpin & (1<<(conexion[j]._id-8)));
+							
+				//this just means "don't check this pin for connections with itself"				
+				if (conexion[i].beforeReading[j] != currentReading) 
+ 68e:	f8 01       	movw	r30, r16
+ 690:	40 81       	ld	r20, Z
+ 692:	50 e0       	ldi	r21, 0x00	; 0
+ 694:	24 17       	cp	r18, r20
+ 696:	35 07       	cpc	r19, r21
+ 698:	a9 f4       	brne	.+42     	; 0x6c4 <determinarconeciones+0x120>
+ 69a:	32 c0       	rjmp	.+100    	; 0x700 <determinarconeciones+0x15c>
+		{
+			if (j != i) 
+			{ 
+				int currentReading;
+				if (j<8)  currentReading = (bapin & (1<<conexion[j]._id));
+				else      currentReading = (bbpin & (1<<(conexion[j]._id-8)));
+ 69c:	26 b1       	in	r18, 0x06	; 6
+ 69e:	f7 01       	movw	r30, r14
+ 6a0:	80 81       	ld	r24, Z
+ 6a2:	88 50       	subi	r24, 0x08	; 8
+ 6a4:	b6 01       	movw	r22, r12
+ 6a6:	02 c0       	rjmp	.+4      	; 0x6ac <determinarconeciones+0x108>
+ 6a8:	66 0f       	add	r22, r22
+ 6aa:	77 1f       	adc	r23, r23
+ 6ac:	8a 95       	dec	r24
+ 6ae:	e2 f7       	brpl	.-8      	; 0x6a8 <determinarconeciones+0x104>
+ 6b0:	30 e0       	ldi	r19, 0x00	; 0
+ 6b2:	26 23       	and	r18, r22
+ 6b4:	37 23       	and	r19, r23
+							
+				//this just means "don't check this pin for connections with itself"				
+				if (conexion[i].beforeReading[j] != currentReading) 
+ 6b6:	f8 01       	movw	r30, r16
+ 6b8:	40 81       	ld	r20, Z
+ 6ba:	50 e0       	ldi	r21, 0x00	; 0
+ 6bc:	42 17       	cp	r20, r18
+ 6be:	53 07       	cpc	r21, r19
+ 6c0:	31 f4       	brne	.+12     	; 0x6ce <determinarconeciones+0x12a>
+ 6c2:	1e c0       	rjmp	.+60     	; 0x700 <determinarconeciones+0x15c>
+				{ //"is this reading different from what is already recorded as the state?" or, is it the first re
+					char valueToSend;
+					if (j<8)
+					{
+							if (currentReading == (1<<conexion[j]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 6c4:	62 17       	cp	r22, r18
+ 6c6:	73 07       	cpc	r23, r19
+ 6c8:	39 f0       	breq	.+14     	; 0x6d8 <determinarconeciones+0x134>
+							else  valueToSend = 2;	
+ 6ca:	92 2d       	mov	r25, r2
+ 6cc:	08 c0       	rjmp	.+16     	; 0x6de <determinarconeciones+0x13a>
+					} 
+					else
+					{
+							if (currentReading == (1<<(conexion[j]._id-8))) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 6ce:	62 17       	cp	r22, r18
+ 6d0:	73 07       	cpc	r23, r19
+ 6d2:	21 f0       	breq	.+8      	; 0x6dc <determinarconeciones+0x138>
+							else  valueToSend = 2;
+ 6d4:	92 2d       	mov	r25, r2
+ 6d6:	03 c0       	rjmp	.+6      	; 0x6de <determinarconeciones+0x13a>
+				if (conexion[i].beforeReading[j] != currentReading) 
+				{ //"is this reading different from what is already recorded as the state?" or, is it the first re
+					char valueToSend;
+					if (j<8)
+					{
+							if (currentReading == (1<<conexion[j]._id)) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 6d8:	91 e0       	ldi	r25, 0x01	; 1
+ 6da:	01 c0       	rjmp	.+2      	; 0x6de <determinarconeciones+0x13a>
+							else  valueToSend = 2;	
+					} 
+					else
+					{
+							if (currentReading == (1<<(conexion[j]._id-8))) valueToSend = 1;   //realmente es 0 y 1 abajo
+ 6dc:	91 e0       	ldi	r25, 0x01	; 1
+							else  valueToSend = 2;
+					}
+					
+					conexion[i].beforeReading[j]=currentReading;
+ 6de:	f8 01       	movw	r30, r16
+ 6e0:	20 83       	st	Z, r18
+									
+				//	if (conexion[i].beforeReading[j]!=conexion[j].beforeReading[i])
+				//	{
+						//pack a byte array with data about the state change
+						dataToSend[0]=JACK_TYPE;
+ 6e2:	f4 01       	movw	r30, r8
+ 6e4:	50 82       	st	Z, r5
+						dataToSend[1]=conexion[i]._id;
+ 6e6:	f5 01       	movw	r30, r10
+ 6e8:	80 81       	ld	r24, Z
+ 6ea:	f4 01       	movw	r30, r8
+ 6ec:	81 83       	std	Z+1, r24	; 0x01
+						dataToSend[2]=conexion[j]._id;
+ 6ee:	f7 01       	movw	r30, r14
+ 6f0:	80 81       	ld	r24, Z
+ 6f2:	f4 01       	movw	r30, r8
+ 6f4:	82 83       	std	Z+2, r24	; 0x02
+						dataToSend[3]=valueToSend;
+ 6f6:	93 83       	std	Z+3, r25	; 0x03
+						envia_cadena(dataToSend); //send it over serial
+ 6f8:	83 2d       	mov	r24, r3
+ 6fa:	94 2d       	mov	r25, r4
+ 6fc:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <envia_cadena>
+			bbpor&=~ (1<<x);
+		}
+		//_delay_ms(50);
+		
+		//conexion[i]._id es el que esta en cero
+		for (int j = 0; j < NUMBER_OF_JACKS; j++)
+ 700:	4c 81       	ldd	r20, Y+4	; 0x04
+ 702:	5d 81       	ldd	r21, Y+5	; 0x05
+ 704:	4f 5f       	subi	r20, 0xFF	; 255
+ 706:	5f 4f       	sbci	r21, 0xFF	; 255
+ 708:	5d 83       	std	Y+5, r21	; 0x05
+ 70a:	4c 83       	std	Y+4, r20	; 0x04
+ 70c:	51 e1       	ldi	r21, 0x11	; 17
+ 70e:	e5 0e       	add	r14, r21
+ 710:	f1 1c       	adc	r15, r1
+ 712:	0f 5f       	subi	r16, 0xFF	; 255
+ 714:	1f 4f       	sbci	r17, 0xFF	; 255
+ 716:	8c 81       	ldd	r24, Y+4	; 0x04
+ 718:	9d 81       	ldd	r25, Y+5	; 0x05
+ 71a:	40 97       	sbiw	r24, 0x10	; 16
+ 71c:	09 f0       	breq	.+2      	; 0x720 <determinarconeciones+0x17c>
+ 71e:	a3 cf       	rjmp	.-186    	; 0x666 <determinarconeciones+0xc2>
+			
+		}
+		
+		
+		//regresa EL PIN ha ser entrada y se activa el pull up
+		if (i<8)
+ 720:	98 e0       	ldi	r25, 0x08	; 8
+ 722:	69 16       	cp	r6, r25
+ 724:	71 04       	cpc	r7, r1
+ 726:	84 f4       	brge	.+32     	; 0x748 <determinarconeciones+0x1a4>
+		{
+			baddr&=~ (1<<x);
+ 728:	24 b1       	in	r18, 0x04	; 4
+ 72a:	c6 01       	movw	r24, r12
+ 72c:	0b 80       	ldd	r0, Y+3	; 0x03
+ 72e:	02 c0       	rjmp	.+4      	; 0x734 <determinarconeciones+0x190>
+ 730:	88 0f       	add	r24, r24
+ 732:	99 1f       	adc	r25, r25
+ 734:	0a 94       	dec	r0
+ 736:	e2 f7       	brpl	.-8      	; 0x730 <determinarconeciones+0x18c>
+ 738:	98 2f       	mov	r25, r24
+ 73a:	90 95       	com	r25
+ 73c:	92 23       	and	r25, r18
+ 73e:	94 b9       	out	0x04, r25	; 4
+			bapor |= (1<<x);
+ 740:	95 b1       	in	r25, 0x05	; 5
+ 742:	89 2b       	or	r24, r25
+ 744:	85 b9       	out	0x05, r24	; 5
+ 746:	0f c0       	rjmp	.+30     	; 0x766 <determinarconeciones+0x1c2>
+		} 
+		else
+		{
+			bbddr&=~ (1<<x);
+ 748:	27 b1       	in	r18, 0x07	; 7
+ 74a:	c6 01       	movw	r24, r12
+ 74c:	0b 80       	ldd	r0, Y+3	; 0x03
+ 74e:	02 c0       	rjmp	.+4      	; 0x754 <determinarconeciones+0x1b0>
+ 750:	88 0f       	add	r24, r24
+ 752:	99 1f       	adc	r25, r25
+ 754:	0a 94       	dec	r0
+ 756:	e2 f7       	brpl	.-8      	; 0x750 <determinarconeciones+0x1ac>
+ 758:	98 2f       	mov	r25, r24
+ 75a:	90 95       	com	r25
+ 75c:	92 23       	and	r25, r18
+ 75e:	97 b9       	out	0x07, r25	; 7
+			bbpor |= (1<<x);		
+ 760:	98 b1       	in	r25, 0x08	; 8
+ 762:	89 2b       	or	r24, r25
+ 764:	88 b9       	out	0x08, r24	; 8
+}	
+void determinarconeciones()
+{
+	
+	int i;
+	for (i=0; i<NUMBER_OF_JACKS; i++)
+ 766:	ef ef       	ldi	r30, 0xFF	; 255
+ 768:	6e 1a       	sub	r6, r30
+ 76a:	7e 0a       	sbc	r7, r30
+ 76c:	49 81       	ldd	r20, Y+1	; 0x01
+ 76e:	5a 81       	ldd	r21, Y+2	; 0x02
+ 770:	4f 5e       	subi	r20, 0xEF	; 239
+ 772:	5f 4f       	sbci	r21, 0xFF	; 255
+ 774:	5a 83       	std	Y+2, r21	; 0x02
+ 776:	49 83       	std	Y+1, r20	; 0x01
+ 778:	50 e1       	ldi	r21, 0x10	; 16
+ 77a:	65 16       	cp	r6, r21
+ 77c:	71 04       	cpc	r7, r1
+ 77e:	09 f0       	breq	.+2      	; 0x782 <determinarconeciones+0x1de>
+ 780:	3d cf       	rjmp	.-390    	; 0x5fc <determinarconeciones+0x58>
+			bbpor |= (1<<x);		
+		}
+		//_delay_ms(50);
+	}
+	
+}
+ 782:	0f 90       	pop	r0
+ 784:	0f 90       	pop	r0
+ 786:	0f 90       	pop	r0
+ 788:	0f 90       	pop	r0
+ 78a:	0f 90       	pop	r0
+ 78c:	df 91       	pop	r29
+ 78e:	cf 91       	pop	r28
+ 790:	1f 91       	pop	r17
+ 792:	0f 91       	pop	r16
+ 794:	ff 90       	pop	r15
+ 796:	ef 90       	pop	r14
+ 798:	df 90       	pop	r13
+ 79a:	cf 90       	pop	r12
+ 79c:	bf 90       	pop	r11
+ 79e:	af 90       	pop	r10
+ 7a0:	9f 90       	pop	r9
+ 7a2:	8f 90       	pop	r8
+ 7a4:	7f 90       	pop	r7
+ 7a6:	6f 90       	pop	r6
+ 7a8:	5f 90       	pop	r5
+ 7aa:	4f 90       	pop	r4
+ 7ac:	3f 90       	pop	r3
+ 7ae:	2f 90       	pop	r2
+ 7b0:	08 95       	ret
+
+000007b2 <main>:
+
+int main(void)
+{
+    /* Replace with your application code */
+	
+	pines();
+ 7b2:	0e 94 58 01 	call	0x2b0	; 0x2b0 <pines>
+	conf_serial_com();
+ 7b6:	0e 94 ba 00 	call	0x174	; 0x174 <conf_serial_com>
+	//timer1();
+	sei();
+ 7ba:	78 94       	sei
+    
+
+   
+	conectar();	
+ 7bc:	0e 94 80 02 	call	0x500	; 0x500 <conectar>
+
+	while (1) 
+    {
+    if (needsHandshake) {
+		//mensaje inicial
+		dataToSend[0]='d';
+ 7c0:	08 e2       	ldi	r16, 0x28	; 40
+ 7c2:	11 e0       	ldi	r17, 0x01	; 1
+ 7c4:	0f 2e       	mov	r0, r31
+ 7c6:	f4 e6       	ldi	r31, 0x64	; 100
+ 7c8:	6f 2e       	mov	r6, r31
+ 7ca:	f0 2d       	mov	r31, r0
+	    dataToSend[1]='e';
+ 7cc:	0f 2e       	mov	r0, r31
+ 7ce:	f5 e6       	ldi	r31, 0x65	; 101
+ 7d0:	7f 2e       	mov	r7, r31
+ 7d2:	f0 2d       	mov	r31, r0
+	    dataToSend[2]='t';
+ 7d4:	0f 2e       	mov	r0, r31
+ 7d6:	f4 e7       	ldi	r31, 0x74	; 116
+ 7d8:	8f 2e       	mov	r8, r31
+ 7da:	f0 2d       	mov	r31, r0
+	    dataToSend[3]='r';
+ 7dc:	0f 2e       	mov	r0, r31
+ 7de:	f2 e7       	ldi	r31, 0x72	; 114
+ 7e0:	9f 2e       	mov	r9, r31
+ 7e2:	f0 2d       	mov	r31, r0
+		envia_cadena(dataToSend); //send it over serial		
+	    _delay_ms(100);
+	    needsHandshake = 0;
+ 7e4:	68 94       	set
+ 7e6:	aa 24       	eor	r10, r10
+ 7e8:	a1 f8       	bld	r10, 1
+ 7ea:	b1 2c       	mov	r11, r1
+ 7ec:	0f 2e       	mov	r0, r31
+ 7ee:	f2 e2       	ldi	r31, 0x22	; 34
+ 7f0:	cf 2e       	mov	r12, r31
+ 7f2:	f1 e0       	ldi	r31, 0x01	; 1
+ 7f4:	df 2e       	mov	r13, r31
+ 7f6:	f0 2d       	mov	r31, r0
+	    
+	    for (int j = 0; j < 2; j++) {
+		    for (int i = 0; i < NUMBER_OF_LEDS; i++) {
+				ledsport |= (1<<leds[i]._id);
+ 7f8:	c1 e0       	ldi	r28, 0x01	; 1
+ 7fa:	d0 e0       	ldi	r29, 0x00	; 0
+ 7fc:	0f 2e       	mov	r0, r31
+ 7fe:	fa e1       	ldi	r31, 0x1A	; 26
+ 800:	ef 2e       	mov	r14, r31
+ 802:	f1 e0       	ldi	r31, 0x01	; 1
+ 804:	ff 2e       	mov	r15, r31
+ 806:	f0 2d       	mov	r31, r0
+   
+	conectar();	
+
+	while (1) 
+    {
+    if (needsHandshake) {
+ 808:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <needsHandshake>
+ 80c:	88 23       	and	r24, r24
+ 80e:	09 f4       	brne	.+2      	; 0x812 <main+0x60>
+ 810:	3f c0       	rjmp	.+126    	; 0x890 <main+0xde>
+		//mensaje inicial
+		dataToSend[0]='d';
+ 812:	f8 01       	movw	r30, r16
+ 814:	60 82       	st	Z, r6
+	    dataToSend[1]='e';
+ 816:	71 82       	std	Z+1, r7	; 0x01
+	    dataToSend[2]='t';
+ 818:	82 82       	std	Z+2, r8	; 0x02
+	    dataToSend[3]='r';
+ 81a:	93 82       	std	Z+3, r9	; 0x03
+		envia_cadena(dataToSend); //send it over serial		
+ 81c:	c8 01       	movw	r24, r16
+ 81e:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <envia_cadena>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 822:	ff ef       	ldi	r31, 0xFF	; 255
+ 824:	20 e7       	ldi	r18, 0x70	; 112
+ 826:	82 e0       	ldi	r24, 0x02	; 2
+ 828:	f1 50       	subi	r31, 0x01	; 1
+ 82a:	20 40       	sbci	r18, 0x00	; 0
+ 82c:	80 40       	sbci	r24, 0x00	; 0
+ 82e:	e1 f7       	brne	.-8      	; 0x828 <main+0x76>
+ 830:	00 c0       	rjmp	.+0      	; 0x832 <main+0x80>
+ 832:	00 00       	nop
+	    _delay_ms(100);
+	    needsHandshake = 0;
+ 834:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <needsHandshake>
+ 838:	4a 2d       	mov	r20, r10
+ 83a:	5b 2d       	mov	r21, r11
+ 83c:	27 c0       	rjmp	.+78     	; 0x88c <main+0xda>
+	    
+	    for (int j = 0; j < 2; j++) {
+		    for (int i = 0; i < NUMBER_OF_LEDS; i++) {
+				ledsport |= (1<<leds[i]._id);
+ 83e:	2b b1       	in	r18, 0x0b	; 11
+ 840:	ce 01       	movw	r24, r28
+ 842:	00 80       	ld	r0, Z
+ 844:	02 c0       	rjmp	.+4      	; 0x84a <main+0x98>
+ 846:	88 0f       	add	r24, r24
+ 848:	99 1f       	adc	r25, r25
+ 84a:	0a 94       	dec	r0
+ 84c:	e2 f7       	brpl	.-8      	; 0x846 <main+0x94>
+ 84e:	82 2b       	or	r24, r18
+ 850:	8b b9       	out	0x0b, r24	; 11
+ 852:	9f e3       	ldi	r25, 0x3F	; 63
+ 854:	29 e1       	ldi	r18, 0x19	; 25
+ 856:	81 e0       	ldi	r24, 0x01	; 1
+ 858:	91 50       	subi	r25, 0x01	; 1
+ 85a:	20 40       	sbci	r18, 0x00	; 0
+ 85c:	80 40       	sbci	r24, 0x00	; 0
+ 85e:	e1 f7       	brne	.-8      	; 0x858 <main+0xa6>
+ 860:	00 c0       	rjmp	.+0      	; 0x862 <main+0xb0>
+ 862:	00 00       	nop
+			    _delay_ms(45); //init sequence
+				ledsport&=~ (1<<leds[i]._id);
+ 864:	2b b1       	in	r18, 0x0b	; 11
+ 866:	ce 01       	movw	r24, r28
+ 868:	00 80       	ld	r0, Z
+ 86a:	02 c0       	rjmp	.+4      	; 0x870 <main+0xbe>
+ 86c:	88 0f       	add	r24, r24
+ 86e:	99 1f       	adc	r25, r25
+ 870:	0a 94       	dec	r0
+ 872:	e2 f7       	brpl	.-8      	; 0x86c <main+0xba>
+ 874:	98 2f       	mov	r25, r24
+ 876:	90 95       	com	r25
+ 878:	92 23       	and	r25, r18
+ 87a:	9b b9       	out	0x0b, r25	; 11
+ 87c:	32 96       	adiw	r30, 0x02	; 2
+		envia_cadena(dataToSend); //send it over serial		
+	    _delay_ms(100);
+	    needsHandshake = 0;
+	    
+	    for (int j = 0; j < 2; j++) {
+		    for (int i = 0; i < NUMBER_OF_LEDS; i++) {
+ 87e:	ec 15       	cp	r30, r12
+ 880:	fd 05       	cpc	r31, r13
+ 882:	e9 f6       	brne	.-70     	; 0x83e <main+0x8c>
+ 884:	41 50       	subi	r20, 0x01	; 1
+ 886:	51 09       	sbc	r21, r1
+	    dataToSend[3]='r';
+		envia_cadena(dataToSend); //send it over serial		
+	    _delay_ms(100);
+	    needsHandshake = 0;
+	    
+	    for (int j = 0; j < 2; j++) {
+ 888:	09 f4       	brne	.+2      	; 0x88c <main+0xda>
+ 88a:	be cf       	rjmp	.-132    	; 0x808 <main+0x56>
+ 88c:	f7 01       	movw	r30, r14
+ 88e:	d7 cf       	rjmp	.-82     	; 0x83e <main+0x8c>
+	    }
+	    
+	   }else {
+	    
+	    //update elements
+		lectura_switches();
+ 890:	0e 94 76 01 	call	0x2ec	; 0x2ec <lectura_switches>
+		lectura_botones();
+ 894:	0e 94 c9 01 	call	0x392	; 0x392 <lectura_botones>
+		determinarconeciones();
+ 898:	0e 94 d2 02 	call	0x5a4	; 0x5a4 <determinarconeciones>
+		lectura_potenciometros();
+ 89c:	0e 94 1c 02 	call	0x438	; 0x438 <lectura_potenciometros>
+ 8a0:	ef ec       	ldi	r30, 0xCF	; 207
+ 8a2:	f7 e0       	ldi	r31, 0x07	; 7
+ 8a4:	31 97       	sbiw	r30, 0x01	; 1
+ 8a6:	f1 f7       	brne	.-4      	; 0x8a4 <main+0xf2>
+ 8a8:	00 c0       	rjmp	.+0      	; 0x8aa <main+0xf8>
+ 8aa:	00 00       	nop
+ 8ac:	ad cf       	rjmp	.-166    	; 0x808 <main+0x56>
+
+000008ae <_exit>:
+ 8ae:	f8 94       	cli
+
+000008b0 <__stop_program>:
+ 8b0:	ff cf       	rjmp	.-2      	; 0x8b0 <__stop_program>
