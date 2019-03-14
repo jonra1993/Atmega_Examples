@@ -5,7 +5,7 @@ In this repository contains some examples using Atmel microcontrollers the softw
 <br>
 
 <p align="center">
-<video width="640" height="480" controls>
+<video width="100%" controls>
   <source src="https://www.jonathanvargas.ml/wp-content/uploads/2019/03/minisumo.mp4">
 Your browser does not support the video tag.
 </video>
