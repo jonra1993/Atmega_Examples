@@ -6,7 +6,7 @@ In this repository contains some examples using Atmel microcontrollers the softw
 
 <p align="center">
 <video width="100%" controls>
-  <source src="https://www.jonathanvargas.ml/wp-content/uploads/2019/03/minisumo.mp4">
+  <source src="https://res.cloudinary.com/dnv0qwkrk/video/upload/v1601398525/wordpress_Jonathan/minisumo.mp4">
 Your browser does not support the video tag.
 </video>
 </p>
@@ -14,11 +14,11 @@ Your browser does not support the video tag.
 <br>
 
 <p align="center">
-  <img height="320" width="480" src="https://www.jonathanvargas.ml/wp-content/uploads/2019/03/2016-11-10-14.57.50.jpg">
+  <img height="320" width="480" src="https://res.cloudinary.com/dnv0qwkrk/image/upload/v1601398546/wordpress_Jonathan/2016-11-10-14.57.50.jpg">
 </p>
 
 <p align="center">
-  <img height="320" width="480" src="https://www.jonathanvargas.ml/wp-content/uploads/2019/03/proteus.png">
+  <img height="320" width="480" src="https://res.cloudinary.com/dnv0qwkrk/image/upload/v1601398517/wordpress_Jonathan/proteus.png">
 </p>
 
 
